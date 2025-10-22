@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Travel Quiz</title>
+</head>
+<body>
+    <nav>
+        <h1>✈️ Travel Guide</h1>
+        <a href="index.html">Home</a>
+        <a href='shop.html'>About Us</a>
+        <a href="products.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <article>
+        <section id="quiz-section">
+            <h1>Travel Knowledge Quiz</h1>
+            <p>This quiz will help you test your knowledge about fun facts and interesting information about countries around the world!</p>
+            <img src="images/istockphoto-1616906708-612x612.jpg" alt="Quiz Image" width="300px">
+
+            <h3>Enter your name to start the quiz:</h3>
+            <input type="text" id="username" placeholder="Enter your name">
+            <button onclick="startQuiz()">Start Quiz</button>
+
+            <div id="quiz-container" style="display:none;">
+                <h3>Question:</h3>
+                <p id="question-text"></p>
+                <div id="answers"></div>
+                <button onclick="nextQuestion()">Next Question</button>
+            </div>
+
+            <div id="result-container" style="display:none;">
+                <h3>Score: <span id="score"></span></h3>
+                <p>Congratulations, <span id="user-name"></span>! You completed the quiz!</p>
+            </div>
+        </section>
+    </article>
+
+    <script src="extra.js"></script>
+</body>
+</html>

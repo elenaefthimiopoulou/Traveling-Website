@@ -1,0 +1,752 @@
+/* website.css - Complete Rustic Travel Guide Styling */
+:root {
+  /* Rustic Color Palette */
+  --rustic-dark: #2c1810;
+  --rustic-medium: #5d4037;
+  --rustic-light: #8d6e63;
+  --rustic-accent: #d7ccc8;
+  --rustic-cream: #f5f1ee;
+  --rustic-green: #4a6355;
+  --rustic-gold: #b8860b;
+  --rustic-bronze: #8b6914;
+  
+  /* Functional Variables */
+  --maxw: 1100px;
+  --radius: 12px;
+  --gutter: 20px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-heavy: 0 20px 40px rgba(44, 24, 16, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  color: var(--rustic-dark);
+  background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover fixed no-repeat, #f9f4ee;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background: var(--rustic-dark);
+  color: var(--rustic-cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--rustic-gold);
+}
+
+nav h1 {
+  color: var(--rustic-gold);
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--rustic-cream);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+nav a:hover {
+  color: var(--rustic-gold);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--rustic-gold);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: linear-gradient(rgba(44, 24, 16, 0.7) 0%, rgba(93, 64, 55, 0.6) 100%),
+              url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  color: var(--rustic-cream);
+  padding: 120px 0;
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/old-map.png');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  color: var(--rustic-cream);
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--rustic-accent);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--rustic-gold);
+  color: var(--rustic-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+  border: 2px solid var(--rustic-gold);
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: var(--rustic-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
+}
+
+/* ===== FEATURES GRID ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: var(--rustic-cream);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--rustic-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--rustic-gold);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--rustic-medium);
+}
+
+.feature-card h3 {
+  color: var(--rustic-dark);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: var(--rustic-light);
+  line-height: 1.6;
+}
+
+/* ===== DESTINATIONS SECTION ===== */
+.destinations-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--rustic-cream) 0%, #e8dfd8 100%);
+  position: relative;
+}
+
+.destinations-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/paper.png');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--rustic-dark);
+  margin-bottom: 50px;
+  position: relative;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--rustic-gold);
+  border-radius: 2px;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--rustic-accent);
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.destination-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: sepia(0.3);
+  transition: filter 0.3s ease;
+}
+
+.destination-card:hover .destination-image {
+  filter: sepia(0.1);
+}
+
+.destination-content {
+  padding: 25px;
+  background: white;
+}
+
+.destination-content h3 {
+  color: var(--rustic-dark);
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.destination-content p {
+  color: var(--rustic-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.destination-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rustic-gold);
+  margin-bottom: 15px;
+}
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+  background: linear-gradient(135deg, var(--rustic-medium) 0%, var(--rustic-dark) 100%);
+  color: var(--rustic-cream);
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--rustic-gold);
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section {
+  padding: 80px 0;
+  text-align: center;
+  background: var(--rustic-cream);
+}
+
+.video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-heavy);
+  border: 3px solid var(--rustic-accent);
+}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter-section {
+  background: var(--rustic-dark);
+  color: var(--rustic-cream);
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.newsletter-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid var(--rustic-gold);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--rustic-cream);
+  color: var(--rustic-dark);
+  font-family: 'Georgia', serif;
+}
+
+.newsletter-input::placeholder {
+  color: var(--rustic-light);
+}
+
+.newsletter-button {
+  padding: 15px 30px;
+  background: var(--rustic-gold);
+  color: var(--rustic-dark);
+  border: 2px solid var(--rustic-gold);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Georgia', serif;
+}
+
+.newsletter-button:hover {
+  background: transparent;
+  color: var(--rustic-gold);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-align: center;
+  border: 2px solid transparent;
+  font-family: 'Georgia', serif;
+}
+
+.btn.primary {
+  background: var(--rustic-gold);
+  color: var(--rustic-dark);
+  border-color: var(--rustic-gold);
+}
+
+.btn.primary:hover {
+  background: transparent;
+  color: var(--rustic-gold);
+}
+
+.btn.secondary {
+  border: 2px solid var(--rustic-gold);
+  background: transparent;
+  color: var(--rustic-gold);
+}
+
+.btn.secondary:hover {
+  background: var(--rustic-gold);
+  color: var(--rustic-dark);
+}
+
+/* ===== HEADER & BASIC CONTENT ===== */
+header {
+  text-align: center;
+  padding: 40px 0;
+  background: rgba(255,255,255,0.9);
+  margin: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--rustic-accent);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--rustic-dark);
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 2px solid var(--rustic-accent);
+}
+
+/* ===== ARTICLE STYLES ===== */
+article {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin: 20px;
+  border: 1px solid var(--rustic-accent);
+}
+
+article p {
+  margin-bottom: 20px;
+  color: var(--rustic-light);
+  font-size: 1.05rem;
+}
+
+article h3 {
+  color: var(--rustic-dark);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--rustic-gold);
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+/* ===== DESTINATION BOXES ===== */
+.box4a, .box4b {
+  background: var(--rustic-cream);
+  border-radius: var(--radius);
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 4px solid var(--rustic-gold);
+  border: 1px solid var(--rustic-accent);
+}
+
+.box4a:hover, .box4b:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.box4a h2, .box4b h2 {
+  color: var(--rustic-dark);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.box4a p, .box4b p {
+  color: var(--rustic-light);
+  margin-bottom: 15px;
+}
+
+.box4a a, .box4b a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--rustic-gold);
+  color: var(--rustic-dark);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid var(--rustic-gold);
+}
+
+.box4a a:hover, .box4b a:hover {
+  background: transparent;
+  color: var(--rustic-gold);
+}
+
+/* ===== TABLE STYLES ===== */
+.table4 {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--rustic-accent);
+}
+
+.table4 th, .table4 td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--rustic-accent);
+}
+
+.table4 th {
+  background: var(--rustic-dark);
+  color: var(--rustic-cream);
+  font-weight: 600;
+  border-right: 1px solid var(--rustic-gold);
+}
+
+.table4 tr:hover {
+  background: rgba(184, 134, 11, 0.05);
+}
+
+.table4 a {
+  color: var(--rustic-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.table4 a:hover {
+  color: var(--rustic-bronze);
+  text-decoration: underline;
+}
+
+/* ===== PARTNER TABLE STYLES ===== */
+.table3 {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--rustic-accent);
+}
+
+.table3 th, .table3 td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--rustic-accent);
+}
+
+.table3 th {
+  background: var(--rustic-dark);
+  color: var(--rustic-cream);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-right: 1px solid var(--rustic-gold);
+}
+
+.table3 img {
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid var(--rustic-accent);
+}
+
+.table3 img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 2px solid var(--rustic-gold);
+  margin-top: 40px;
+  padding: 30px 0;
+  text-align: center;
+  color: var(--rustic-dark);
+  background: var(--rustic-cream);
+  font-weight: 600;
+}
+
+/* ===== CONTENT CARDS ===== */
+.content, .booking {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  border: 1px solid var(--rustic-accent);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px){
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .table4, .table3 {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  article {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .features-grid,
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .feature-card, .destination-card {
+    padding: 20px 15px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.p-20 { padding: 20px; }
+.bg-cream { background: var(--rustic-cream); }
+.text-gold { color: var(--rustic-gold); }
+.text-dark { color: var(--rustic-dark); }

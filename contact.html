@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us - Travel Guide</title>
+</head>
+<body>
+    <nav>
+        <h1>🗺️ Travel Guide</h1>
+        <a href="index.html">Home</a>
+        <a href="shop.html">About Us</a>
+        <a href="products.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(rgba(44, 24, 16, 0.8) 0%, rgba(93, 64, 55, 0.7) 100%), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1 class="hero-title">Let's Start Your Journey</h1>
+            <p class="hero-subtitle">We're here to help you plan the adventure of a lifetime. Reach out to us with your travel dreams and questions.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Contact Methods -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>+30 210 123 4567</p>
+                <p style="color: var(--rustic-light); font-size: 0.9rem; margin-top: 10px;">Mon-Fri: 9:00-18:00</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✉️</div>
+                <h3>Email Us</h3>
+                <p>hello@wanderlustguide.com</p>
+                <p style="color: var(--rustic-light); font-size: 0.9rem; margin-top: 10px;">We reply within 24 hours</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>Available on website</p>
+                <p style="color: var(--rustic-light); font-size: 0.9rem; margin-top: 10px;">Mon-Fri: 9:00-21:00</p>
+            </div>
+        </div>
+
+        <!-- Contact Form and Info -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+            <!-- Contact Form -->
+            <article class="content">
+                <h2 class="section-title">Send Us a Message</h2>
+                <form id="contact-form" style="margin-top: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="name" style="display: block; margin-bottom: 8px; color: var(--rustic-dark); font-weight: 600;">Full Name *</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid var(--rustic-accent); border-radius: 8px; font-family: 'Georgia', serif; background: var(--rustic-cream);">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 8px; color: var(--rustic-dark); font-weight: 600;">Email Address *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid var(--rustic-accent); border-radius: 8px; font-family: 'Georgia', serif; background: var(--rustic-cream);">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="phone" style="display: block; margin-bottom: 8px; color: var(--rustic-dark); font-weight: 600;">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" style="width: 100%; padding: 12px; border: 2px solid var(--rustic-accent); border-radius: 8px; font-family: 'Georgia', serif; background: var(--rustic-cream);">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="destination" style="display: block; margin-bottom: 8px; color: var(--rustic-dark); font-weight: 600;">Destination of Interest</label>
+                        <select id="destination" name="destination" style="width: 100%; padding: 12px; border: 2px solid var(--rustic-accent); border-radius: 8px; font-family: 'Georgia', serif; background: var(--rustic-cream);">
+                            <option value="">Select a destination</option>
+                            <option value="italy">Italy</option>
+                            <option value="germany">Germany</option>
+                            <option value="england">England</option>
+                            <option value="greece">Greece</option>
+                            <option value="usa">USA</option>
+                            <option value="scotland">Scotland</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="message" style="display: block; margin-bottom: 8px; color: var(--rustic-dark); font-weight: 600;">Your Message *</label>
+                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 12px; border: 2px solid var(--rustic-accent); border-radius: 8px; font-family: 'Georgia', serif; background: var(--rustic-cream); resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Send Message</button>
+                </form>
+            </article>
+
+            <!-- Contact Info -->
+            <article class="content">
+                <h2 class="section-title">Why Choose Us?</h2>
+                
+                <div style="background: var(--rustic-cream); padding: 25px; border-radius: 12px; border-left: 4px solid var(--rustic-gold); margin-bottom: 25px;">
+                    <h3 style="color: var(--rustic-dark); margin-bottom: 15px;">🏆 Expert Guidance</h3>
+                    <p style="color: var(--rustic-light);">With over 15 years of experience, we craft personalized journeys that match your dreams and budget.</p>
+                </div>
+
+                <div style="background: var(--rustic-cream); padding: 25px; border-radius: 12px; border-left: 4px solid var(--rustic-gold); margin-bottom: 25px;">
+                    <h3 style="color: var(--rustic-dark); margin-bottom: 15px;">🤝 Personalized Service</h3>
+                    <p style="color: var(--rustic-light);">Every traveler is unique. We take time to understand your preferences and create bespoke itineraries.</p>
+                </div>
+
+                <div style="background: var(--rustic-cream); padding: 25px; border-radius: 12px; border-left: 4px solid var(--rustic-gold); margin-bottom: 25px;">
+                    <h3 style="color: var(--rustic-dark); margin-bottom: 15px;">🛡️ 24/7 Support</h3>
+                    <p style="color: var(--rustic-light);">We're with you every step of the way, from planning to your return home.</p>
+                </div>
+
+                <div style="background: var(--rustic-cream); padding: 25px; border-radius: 12px; border-left: 4px solid var(--rustic-gold);">
+                    <h3 style="color: var(--rustic-dark); margin-bottom: 15px;">📅 Response Time</h3>
+                    <p style="color: var(--rustic-light); margin-bottom: 10px;">• Email: Within 24 hours</p>
+                    <p style="color: var(--rustic-light); margin-bottom: 10px;">• Phone: Immediate during business hours</p>
+                    <p style="color: var(--rustic-light);">• Emergency: 24/7 for traveling clients</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- FAQ Section -->
+        <section style="margin-top: 60px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Do you offer group discounts?</h3>
+                    <p>Yes! We offer special rates for groups of 6 or more. Contact us for customized group pricing.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>What's your cancellation policy?</h3>
+                    <p>We offer flexible cancellation policies. Specific terms depend on the destination and timing.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Can you customize itineraries?</h3>
+                    <p>Absolutely! We specialize in creating personalized journeys tailored to your interests and pace.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const destination = document.getElementById('destination').value;
+            
+            // Simple validation
+            if (name && email) {
+                // Show success message
+                alert(`Thank you, ${name}! Your message has been sent. We'll get back to you within 24 hours.`);
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+            }
+        });
+    </script>
+</body>
+</html>
